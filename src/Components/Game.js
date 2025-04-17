@@ -6,6 +6,8 @@ import GameLogic from './GameLogic';
 
 const Game = () => {
     const categories = ['Restmüll', 'Papier', 'Plastik', 'Glas'];
+    
+
     const {
         score,
         gameOver,

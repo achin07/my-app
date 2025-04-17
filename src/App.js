@@ -29,4 +29,6 @@ export default App;
 
 //conditional rendering of logo when in game/guide
 //tooltip issue
+//which is wrong and with explanation
+//guide page has to be extensive 
 //UI

@@ -6,6 +6,8 @@ const useGameLogic = (categories) => {
     const [gameOver, setGameOver] = useState(false);
     const [randomItem, setRandomItem] = useState(generateRandomItem());
     const [animateScore, setAnimateScore] = useState(false);
+    const dropSound = new Audio('./trash.mp3');
+    dropSound.volume = 0.5;
 
     function generateRandomItem(previousCategory) {
         const availableCategories = categories.filter(cat => cat !== previousCategory);
@@ -18,6 +20,7 @@ const useGameLogic = (categories) => {
         if (gameOver) return;
 
         const isValid = wasteMaterials[item.category]?.includes(item.name);
+        dropSound.play();
         if (isValid && item.category === targetCategory) {
             setScore(prev => prev + 1);
             setAnimateScore(true);
