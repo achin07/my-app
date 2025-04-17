@@ -20,7 +20,7 @@ const Footer = () => {
           textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)',
         }}
       >
-        Made with <span style={{ color: 'red' }}>❤️</span> by Achintya for Hyphorest.
+        Made with <span style={{ color: 'red' }}>❤️</span> by Achintya.
       </p>
     </footer>
   );

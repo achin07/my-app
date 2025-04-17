@@ -29,5 +29,4 @@ export default App;
 
 //conditional rendering of logo when in game/guide
 //tooltip issue
-//has to be put into trash boxes //drap and drop features
 //UI
