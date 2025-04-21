@@ -6,19 +6,21 @@ import { HTML5Backend } from 'react-dnd-html5-backend'; // Import HTML5Backend
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Guide from './Components/Guide';
-import Game from './Components/Game';
+import WorldStats from './Components/WorldStats';
+import UserStats from './Components/UserStats';
 
 function App() {
   return (
     <div className="App">
-      <Header/>
       <DndProvider backend={HTML5Backend}>
+        <Header />
         <Routes>
           <Route path="/" element={<Guide />} />
-          <Route path="/game" element={<Game />} />
+          <Route path='/stats' element={<WorldStats />} />
+          <Route path='/userstats' element={<UserStats/>}/>
         </Routes>
+        <Footer/>
       </DndProvider>
-      <Footer/>
     </div>
   );
 }
@@ -27,8 +29,8 @@ export default App;
 
 
 
-//conditional rendering of logo when in game/guide
-//tooltip issue
-//which is wrong and with explanation
-//guide page has to be extensive 
-//UI
+
+//header footer
+//Guide page logic not able to add waste products
+// wrong feedback and correct feedback
+//refactoring the logic

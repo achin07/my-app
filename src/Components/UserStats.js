@@ -1,0 +1,154 @@
+import React from 'react';
+import './Userstats.css';
+import CalendarHeatmap from 'react-calendar-heatmap';
+import 'react-calendar-heatmap/dist/styles.css';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { BarChart3, UserCircle2 } from 'lucide-react'; // or any icon lib
+import { Award, Activity } from 'lucide-react';
+
+
+
+
+const badges = [
+    { title: "First Recycle ", date: "2025-04-01" },
+    { title: "7-Day Streak ", date: "2025-04-07" },
+    { title: "Plastic Hero ", date: "2025-04-15" }
+];
+
+const recentActivity = [
+    "Sorted 5 plastic bottles",
+    "Earned 'Plastic Hero' badge",
+    "Sorted 3 organic waste items",
+    "Recycled for 14 consecutive days"
+];
+
+const environmentalImpact = {
+    plasticSaved: "20 kg",
+    waterSaved: "15 L"
+};
+
+const funTip = "Recycling plastic bottles saves up to 70% of energy compared to making new plastic!";
+const getStoredStreakData = () => {
+    const stored = JSON.parse(localStorage.getItem('recyclingStreak') || '[]');
+    return stored.map(date => ({
+        date,
+        count: 1
+    }));
+};
+
+const streakData = getStoredStreakData();
+
+
+
+const UserStats = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const isUserStats = location.pathname === '/userstats';
+    const isWorldStats = location.pathname === '/stats';
+    return (
+        <main className="user-stats-container">
+
+            <div className="tab-nav">
+                <div
+                    className={`tab ${isUserStats ? 'active' : ''}`}
+                    onClick={() => navigate('/userstats')}
+                >
+                    <UserCircle2 className="tab-icon" />
+                    <span>User Stats</span>
+                </div>
+                <div
+                    className={`tab ${isWorldStats ? 'active' : ''}`}
+                    onClick={() => navigate('/stats')}
+                >
+                    <BarChart3 className="tab-icon" />
+                    <span>World Stats</span>
+                </div>
+            </div>
+
+            <section className="stats-container">
+
+                {/* Top Row */}
+                <div className="top-row">
+                    {/* Heatmap */}
+                    <div className="card heatmap-card">
+                        <h3>Recycling Streak</h3>
+                        <CalendarHeatmap
+                            startDate={new Date('2025-04-01')}
+                            endDate={new Date('2025-06-30')}
+                            values={streakData}
+                            classForValue={(value) => {
+                                if (!value) return 'empty';
+                                return value.count > 0 ? 'filled' : 'empty';
+                            }}
+                            showWeekdayLabels={true}
+                            tooltipDataAttrs={(value) => {
+                                if (!value || !value.date) return null;
+                                return {
+                                    'data-tip': `Recycled on ${new Date(value.date).toDateString()}`
+                                };
+                            }}
+                        />
+
+
+                    </div>
+
+                    {/* Recent Activity */}
+                    <div className="card activity-card">
+                        <h3>Recent Activity</h3>
+                        <div className="activity-feed">
+                            {recentActivity.map((activity, index) => (
+                                <div key={index} className="activity-item">
+                                    <Activity className="activity-icon" />
+                                    <span>{activity}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+
+                    {/* Tip from Recyclo */}
+
+                </div>
+
+                {/* Bottom Row */}
+                <div className="bottom-row">
+                    {/* Badges */}
+                    <div className="card badges-card">
+                        <h3>Badges Earned</h3>
+                        <div className="badges-container">
+                            {badges.map((badge, index) => (
+                                <div key={index} className="badge">
+                                    <Award className="badge-icon" />
+                                    <div>
+                                        <span>{badge.title}</span>
+                                        <span className="badge-date">Earned on: {badge.date}</span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="card tip-card recyclo-tip-card">
+                        <h3>Tip from Recyclo</h3>
+                        <div className="tip-content">
+                            <img src="./recyclo-panda.png" alt="Recyclo the Panda" width='100px' height='auto' />
+                            <p>{funTip}</p>
+                        </div>
+                    </div>
+
+
+                    {/* Environmental Impact */}
+                    <div className="card impact-card">
+                        <h3>Environmental Impact</h3>
+                        <p>🌍 Plastic Saved: {environmentalImpact.plasticSaved}</p>
+                        <p>💧 Water Saved: {environmentalImpact.waterSaved}</p>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    );
+};
+
+export default UserStats;

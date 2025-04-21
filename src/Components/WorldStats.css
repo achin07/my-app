@@ -1,0 +1,201 @@
+/* WorldStats.css */
+.financial-dashboard-container {
+    padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('../../public/background.png');
+    min-height: 100vh;
+    
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .dashboard-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+  }
+  
+  /* Single Container for All Cards */
+  .stats-container {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    width: 90%;
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+  
+  /* Flexbox for horizontal alignment */
+  .stats-grid {
+    display: flex;
+    gap: 1rem; /* Space between cards */
+    justify-content: space-between;
+    flex-wrap: wrap; /* Wrap on smaller screens */
+  }
+  
+  /* Each stat card item */
+  .stat-card-item {
+    flex: 1; /* Equal width for all cards */
+    min-width: 320px; /* Minimum width before wrapping */
+    padding: 1.5rem;
+    /*background-color: #fff;*/
+    border-radius: 8px;
+    /*border: 1px solid #ddd;*/
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Gauge chart container */
+  .gauge-chart-container {
+    flex: 1; /* Same width as other cards */
+    min-width: 250px;
+    padding: 1.5rem;
+    background-color: transparent;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .stats-grid {
+      flex-direction: column; /* Stack vertically on small screens */
+    }
+  }
+  
+  /* Card Styling */
+  .card {
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Modify the stat-card to use flexbox for horizontal layout */
+.stat-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem; /* Space between the items */
+    padding: 1rem;
+    background-color: transparent;
+    border-radius: 8px;
+    flex-wrap: wrap; /* Allow wrapping if the screen is small */
+  }
+
+  
+  .stat-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .stat-change {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .stat-change.up {
+    color: green;
+  }
+  
+  .stat-change.down {
+    color: #d32f2f;
+  }
+  
+  .gauge-chart-container h3 {
+    margin-bottom: 1rem;
+  }
+  
+  /* Optional: Add styling for the gauge chart itself */
+  .gauge-chart-container .react-gauge-chart {
+    margin: 0 auto;
+    width: 100%;
+    height: 200px;
+  }
+  .gauge-chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .line-chart-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: transparent;
+    border-radius: 8px;
+    text-align: left;
+    width:550px;
+    
+  }
+  
+  .card-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .line-chart-container {
+    width: 100%;
+    height: 300px;
+  }
+  
+ 
+  
+  .yearly-stats,
+  .mismanagement-list,
+  .plastic-waste-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .yearly-stat,
+  .mismanagement-item,
+  .plastic-waste-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 8px;
+
+  }
+  .tab {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.tab-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.tab.active {
+    background-color: #4caf50;
+    color: white;
+    font-size: 1.1rem;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+  
+  
+  

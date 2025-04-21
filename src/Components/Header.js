@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
 const Header = () => {
   const [showTooltip, setShowTooltip] = useState(false);
   const navigate = useNavigate();
@@ -9,7 +8,7 @@ const Header = () => {
   return (
     <header
       style={{
-        background: 'linear-gradient(90deg, #a8e6cf, #dcedc1)',
+        backgroundColor: 'rgba(255, 255, 255, 0.1)',
         padding: '1rem 2rem',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
         display: 'flex',
@@ -21,6 +20,7 @@ const Header = () => {
     >
       {/* Logo on the left */}
       <img
+        onClick={() => navigate('/')}
         src="./recycle.png"
         alt="Logo"
         style={{
@@ -35,33 +35,33 @@ const Header = () => {
       {/* Centered Title */}
       <h1
         style={{
-          color: '#1b5e20', // dark earthy green
+          color: '#1b5e20',
           margin: 0,
-          marginRight:'500px',
-          marginLeft:'500px',
+          marginRight: '500px',
+          marginLeft: '500px',
           textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',
         }}
       >
-        Recycling Guide
+        Recycle with Recyclo
       </h1>
 
-      {/* Logo on the right with Tooltip */}
+      {/* Stats icon on the right with tooltip */}
       <div
         style={{
-          right: '2rem', // Make sure it's 2rem from the right edge
-          alignItems:'right',
+          position: 'absolute',
+          right: '2rem',
           cursor: 'pointer',
         }}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
-        onClick={() => navigate('/game')}
+        onClick={() => navigate('/userstats')}
       >
         <img
-          src="./gamelogo.png" // Replace with the gaming logo
-          alt="Switch to Gaming Mode"
+          src="./userstats.png" // Replace with your stats icon path
+          alt="View Stats"
           style={{
-            height: '40px',
-            width: '40px',
+            height: '35px',
+            width: '35px',
             objectFit: 'contain',
           }}
         />
@@ -71,19 +71,19 @@ const Header = () => {
           <div
             style={{
               position: 'absolute',
-              top: '45px', // position below the icon
-              left: '50%',
+              top: '45px',
+              right: 0,
               backgroundColor: '#fff',
               color: 'black',
               padding: '5px 10px',
               borderRadius: '4px',
               fontSize: '12px',
               whiteSpace: 'nowrap',
-              opacity: 1,
-              transition: 'opacity 0.3s',
+              boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)',
+              zIndex: 10,
             }}
           >
-            Switch to Gaming Mode
+            View Stats
           </div>
         )}
       </div>
@@ -92,4 +92,3 @@ const Header = () => {
 };
 
 export default Header;
-
