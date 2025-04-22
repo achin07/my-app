@@ -1,0 +1,280 @@
+.drag-item {
+    padding: 1rem;
+    margin-left: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-weight: 400;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+    z-index: auto;
+}
+
+.drag-item.dragging {
+    opacity: 0.5;
+    width: 100px;
+    height: 100px;
+    transform: scale(0.8);
+    z-index: 1000;
+}
+
+.streak-card {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.streak-card-butt {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.arrow-point {
+    position: absolute;
+    top: -50px;
+    transform: translateX(-50%);
+    height: 40px;
+    z-index: 20;
+    animation: bounce 1s infinite;
+}
+
+/*arrow animation*/
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+/* Base drop zone container */
+.drop-zone-con1 {
+    position: relative;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    height: 400px;
+}
+
+
+.drop-zone-con1 {
+    transition: all 0.3s ease;
+    /* Smooth hover effects */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fallback background */
+}
+
+.drop-zone-con1:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.drop-zone-con2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: 200px 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    z-index: 0;
+
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.items-list {
+    margin-top: 1rem;
+    text-align: left;
+    padding-left: 1rem;
+    color: #fff;
+    list-style-type: none;
+}
+
+.main-container {
+    padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+    min-height: 200vh;
+    background-image: url('../../public/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.scroll-header {
+    margin-top: 200px;
+    color: #ffffff;
+    font-size: 64px;
+    max-width: 600px;
+    line-height: 1.5;
+    text-wrap: nowrap;
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+/* Visible state */
+.scroll-header--visible {
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+    top: auto;
+}
+
+/* Hidden state */
+.scroll-header--hidden {
+    opacity: 0;
+    transform: translateY(-30px);
+    position: absolute;
+    top: -9999px;
+}
+
+.flex-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 450px;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* Mobile-first variant */
+.flex-container--mobile-stack {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .flex-container--mobile-stack {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+.image-container {
+    max-width: 300px;
+    height: auto;
+    border-radius: 16px;
+    margin-right: 500px;
+    z-index: 10;
+}
+
+.text-panel {
+    position: absolute;
+    left: 30%;
+    top: 55%;
+    transform: translate(0%, -50%);
+    text-align: center;
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 3rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+}
+
+.custom-input {
+    width: 60%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.dropdown-list {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ccc;
+    width: 60%;
+    margin: 0.5rem auto 0;
+    padding: 0.5rem;
+    list-style-type: none;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    left: 20%;
+    z-index: 10;
+}
+
+.pop-card {
+    position: absolute;
+    bottom: 30px;
+    top: 160%;
+    left: 50%;
+    height: 300px;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    max-width: 400px;
+    animation: slideUp 0.5s ease-out;
+    text-align: center;
+}
+
+/*pop card animation*/
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}

@@ -1,6 +1,6 @@
 // wasteData.js
 const wasteMaterials = {
-    Restmüll: [
+    Biodegradeable: [
       "Cigarette butts",
       "Vacuum dusts",
       "Fruit peels",

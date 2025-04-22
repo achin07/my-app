@@ -16,8 +16,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Guide />} />
-          <Route path='/stats' element={<WorldStats />} />
-          <Route path='/userstats' element={<UserStats/>}/>
+          <Route path='/worldstats' element={<WorldStats />} />
+          <Route path='/stats' element={<UserStats/>}/>
         </Routes>
         <Footer/>
       </DndProvider>
@@ -31,6 +31,4 @@ export default App;
 
 
 //header footer
-//Guide page logic not able to add waste products
-// wrong feedback and correct feedback
-//refactoring the logic
+//stats toolbar

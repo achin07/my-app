@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header
       style={{
-        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        background: 'transparent',
         padding: '1rem 2rem',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
         display: 'flex',
@@ -54,7 +54,7 @@ const Header = () => {
         }}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
-        onClick={() => navigate('/userstats')}
+        onClick={() => navigate('/stats')}
       >
         <img
           src="./userstats.png" // Replace with your stats icon path

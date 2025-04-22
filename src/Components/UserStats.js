@@ -2,12 +2,9 @@ import React from 'react';
 import './Userstats.css';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import 'react-calendar-heatmap/dist/styles.css';
-import { useNavigate, useLocation } from 'react-router-dom';
+import TabButton from './TabButton';
 import { BarChart3, UserCircle2 } from 'lucide-react'; // or any icon lib
 import { Award, Activity } from 'lucide-react';
-
-
-
 
 const badges = [
     { title: "First Recycle ", date: "2025-04-01" },
@@ -37,35 +34,13 @@ const getStoredStreakData = () => {
 };
 
 const streakData = getStoredStreakData();
-
-
-
 const UserStats = () => {
-    const navigate = useNavigate();
-    const location = useLocation();
-
-    const isUserStats = location.pathname === '/userstats';
-    const isWorldStats = location.pathname === '/stats';
     return (
         <main className="user-stats-container">
-
             <div className="tab-nav">
-                <div
-                    className={`tab ${isUserStats ? 'active' : ''}`}
-                    onClick={() => navigate('/userstats')}
-                >
-                    <UserCircle2 className="tab-icon" />
-                    <span>User Stats</span>
-                </div>
-                <div
-                    className={`tab ${isWorldStats ? 'active' : ''}`}
-                    onClick={() => navigate('/stats')}
-                >
-                    <BarChart3 className="tab-icon" />
-                    <span>World Stats</span>
-                </div>
+                <TabButton to="/stats" icon={UserCircle2} label="User Stats" />
+                <TabButton to="/worldstats" icon={BarChart3} label="World Stats" />
             </div>
-
             <section className="stats-container">
 
                 {/* Top Row */}
@@ -89,8 +64,6 @@ const UserStats = () => {
                                 };
                             }}
                         />
-
-
                     </div>
 
                     {/* Recent Activity */}
@@ -105,10 +78,6 @@ const UserStats = () => {
                             ))}
                         </div>
                     </div>
-
-
-                    {/* Tip from Recyclo */}
-
                 </div>
 
                 {/* Bottom Row */}
@@ -129,6 +98,7 @@ const UserStats = () => {
                         </div>
                     </div>
 
+                    {/* Tip from Recyclo */}
                     <div className="card tip-card recyclo-tip-card">
                         <h3>Tip from Recyclo</h3>
                         <div className="tip-content">
@@ -136,7 +106,6 @@ const UserStats = () => {
                             <p>{funTip}</p>
                         </div>
                     </div>
-
 
                     {/* Environmental Impact */}
                     <div className="card impact-card">
