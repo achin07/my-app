@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Guide.js
+The main page which consists all the components
+Header, Footer, DropZone and Draggable Items along with a Search Bar, the Draggable Items and DropZone along with some constants are in different components as per React Design Principles. As the user is done with daily drag and drop, the user can move to User Stats Page to see his achievements.
+
+The user can also add items from dropdown menu to the TrashBins
+
+### UserStats.js
+Consists of all the user's streak data(maintained via localStorage), along with few of his achievements
+
+### WorldData.js
+Consists of actual data of World in terms of Waste Disposal and etc.

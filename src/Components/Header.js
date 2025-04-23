@@ -18,7 +18,7 @@ const Header = () => {
         height: '60px',
       }}
     >
-      {/* Logo on the left */}
+     
       <img
         onClick={() => navigate('/')}
         src="./recycle.png"
@@ -32,7 +32,7 @@ const Header = () => {
         }}
       />
 
-      {/* Centered Title */}
+      
       <h1
         style={{
           color: '#1b5e20',
@@ -45,7 +45,7 @@ const Header = () => {
         Recycle with Recyclo
       </h1>
 
-      {/* Stats icon on the right with tooltip */}
+      
       <div
         style={{
           position: 'absolute',
@@ -57,7 +57,7 @@ const Header = () => {
         onClick={() => navigate('/stats')}
       >
         <img
-          src="./userstats.png" // Replace with your stats icon path
+          src="./userstats.png" 
           alt="View Stats"
           style={{
             height: '35px',
@@ -66,7 +66,7 @@ const Header = () => {
           }}
         />
 
-        {/* Custom Tooltip */}
+        
         {showTooltip && (
           <div
             style={{

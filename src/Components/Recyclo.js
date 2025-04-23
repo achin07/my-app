@@ -1,6 +1,6 @@
 // components/Recyclo.js
 import React from 'react';
-import './recyclo.css'; // Create this CSS file
+import './recyclo.css'; 
 
 const Recyclo = ({ fact,scrolled }) => {
   return (

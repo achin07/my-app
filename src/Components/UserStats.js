@@ -3,7 +3,7 @@ import './Userstats.css';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import 'react-calendar-heatmap/dist/styles.css';
 import TabButton from './TabButton';
-import { BarChart3, UserCircle2 } from 'lucide-react'; // or any icon lib
+import { BarChart3, UserCircle2 } from 'lucide-react'; 
 import { Award, Activity } from 'lucide-react';
 
 const badges = [

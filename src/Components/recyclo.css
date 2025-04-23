@@ -18,10 +18,10 @@
     animation: blink 4s infinite;
   }
   
-  /* 🧠 Thought bubble above the panda */
+
   .thought-bubble {
     position: absolute;
-    top: -130px; /* lifted above the panda */
+    top: -130px; 
     margin-left: 160px;
     transform: translateX(-55%);
     margin-top: 2rem;
@@ -34,10 +34,10 @@
     text-align: center;
     color:black;
     background-color: rgba(255, 255, 255, 0.6);
-    /* Optional: soft "cloudy" look */
+    
   }
   
-  /* ☁️ Add a fluffy shadow around the cloud */
+
   .thought-bubble::before {
     content: '';
     position: absolute;
@@ -56,7 +56,7 @@
     z-index: -1;
   }
   
-  /* ✨ Optional speech bubble tail still pointing to panda */
+ 
   .thought-bubble::after {
     content: '';
     position: absolute;
