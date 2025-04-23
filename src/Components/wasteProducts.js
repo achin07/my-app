@@ -7,7 +7,7 @@ const wasteMaterials = {
       "Vegetable remains",
       "Sanitary products",
     ],
-    Papier: [
+    Paper: [
       "Used tissues",
       "Newspapers",
       "Magazines",
@@ -15,14 +15,14 @@ const wasteMaterials = {
       "Envelopes",
       "Office paper",
     ],
-    Plastik: [
+    Plastic: [
       "Plastic bottles",
       "Yogurt containers",
       "Shampoo bottles",
       "Plastic bags",
       "Food packaging",
     ],
-    Glas: [
+    Glass: [
       "Wine bottles",
       "Jam jars",
       "Perfume bottles",

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import wasteMaterials from './wasteProducts';
 import Recyclo from './Recyclo';
-import { useNavigate } from 'react-router-dom';
 import { facts, initialItems, categoryDescriptions, wrongCategoryReasons } from './GuideComponents/constants';
 import './Guide.css';
 import DraggableItem from './GuideComponents/DraggableItem';
@@ -15,16 +14,15 @@ const Guide = () => {
   const [availableItems, setAvailableItems] = useState(initialItems);
   const [sortedItems, setSortedItems] = useState({
     Biodegradeable: [],
-    Papier: [],
-    Plastik: [],
-    Glas: [],
+    Paper: [],
+    Plastic: [],
+    Glass: [],
   });
   const [recycloMessage, setRecycloMessage] = useState({ text: '', image: '' });
   const [showRecycloCard, setShowRecycloCard] = useState(false);
   const dragSectionRef = useRef(null);
   const [showStreakCard, setShowStreakCard] = useState(false);
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -134,8 +132,8 @@ const Guide = () => {
 
       {/* Draggable items */}
       {scrolled && (
-        <div ref={dragSectionRef} style={{ textAlign: 'center', marginBottom: '2rem', marginLeft: '165px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0.5rem' }}>
+        <div ref={dragSectionRef} style={{ textAlign: 'center', marginBottom: '2rem', margin:'auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0.5rem' ,display:'flex',margin:'auto'}}>
             {availableItems.map((item, index) => (
               <DraggableItem key={index} item={item} />
             ))}
@@ -152,7 +150,7 @@ const Guide = () => {
           marginBottom: '20rem',
           height: '400px'
         }}>
-          {['Biodegradeable', 'Papier', 'Plastik', 'Glas'].map(category => (
+          {['Biodegradeable', 'Paper', 'Plastic', 'Glass'].map(category => (
             <CategoryDropZone
               key={category}
               category={category}
@@ -165,7 +163,6 @@ const Guide = () => {
               triggerRecyclo={triggerRecyclo}
               showStreakCard={showStreakCard}
               windowSize={windowSize}
-              navigate={navigate}
             />
           ))}
         </section>

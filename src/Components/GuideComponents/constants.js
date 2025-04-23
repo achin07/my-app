@@ -9,27 +9,27 @@ export const facts = [
   
   export const initialItems = [
     { name: 'Vegetable/Fruit Peels', category: 'Biodegradeable' },
-    { name: 'Tissues/Old Papers', category: 'Papier' },
-    { name: 'Bottles/Plastic Bags', category: 'Plastik' },
-    { name: 'Beer bottles/Jars', category: 'Glas' },
+    { name: 'Tissues/Old Papers', category: 'Paper' },
+    { name: 'Bottles/Plastic Bags', category: 'Plastic' },
+    { name: 'Beer bottles/Jars', category: 'Glass' },
   ];
   
   export const categoryDescriptions = {
     Biodegradeable: 'Good! Biodegradeable is for items that cannot be recycled like vegetable and food remains.',
-    Papier: 'Great! Papier is for recyclable paper like documents, envelopes, and newspapers.',
-    Plastik: 'Amazing! Plastik is for plastic items like bottles and wraps.',
-    Glas: 'Yay! Glas is for recyclable glass like pickle and jam jars.'
+    Paper: 'Great! Paper is for recyclable paper like documents, envelopes, and newspapers.',
+    Plastic: 'Amazing! Plastic is for plastic items like bottles and wraps.',
+    Glass: 'Yay! Glasss is for recyclable Glasss like pickle and jam jars.'
   };
   
   export const wrongCategoryReasons = {
     Biodegradeable: 'Oops! This item can be recycled and should not go to Biodegradeable.',
-    Papier: 'Nope! This item isn’t clean or made of recyclable paper.',
-    Plastik: 'Not quite! This doesn’t belong in Plastik. Maybe it’s glass or paper or organic waste?',
-    Glas: 'Hmm, that doesn’t belong in Glas. Maybe it’s plastic, paper or has leftover food?'
+    Paper: 'Nope! This item isn’t clean or made of recyclable paper.',
+    Plastic: 'Not quite! This doesn’t belong in Plastic. Maybe it’s Glasss or paper or organic waste?',
+    Glass: 'Hmm, that doesn’t belong in Glasss. Maybe it’s plastic, paper or has leftover food?'
   };
   export const bgImages = {
     Biodegradeable: './biodegradeable.png',
-    Papier: './papier.png',
-    Plastik: './plastik.png',
-    Glas: './glas.png'
+    Paper: './paper.png',
+    Plastic: './Plastic.png',
+    Glass: './Glass.png'
   };

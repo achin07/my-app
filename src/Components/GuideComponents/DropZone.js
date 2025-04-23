@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { useDrop } from 'react-dnd';
 import Confetti from 'react-confetti';
+import { useNavigate } from 'react-router-dom';
+
+
+
 
 const CategoryDropZone = ({
     category,
@@ -13,8 +17,8 @@ const CategoryDropZone = ({
     showStreakCard,
     triggerRecyclo,
     windowSize,
-    navigate
 }) => {
+    const navigate = useNavigate();
     const [{ isOverCurrent }, drop] = useDrop({
         accept: 'ITEM',
         collect: (monitor) => ({
@@ -63,23 +67,15 @@ const CategoryDropZone = ({
     // Close Streak Card on outside click
     const streakRef = useRef(null);
 
-    useEffect(() => {
-        const handleClickOutside = (e) => {
-            if (showStreakCard && streakRef.current && !streakRef.current.contains(e.target)) {
-                setShowStreakCard(false);
-            }
-        };
-
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, [showStreakCard]);
 
     const bgImages = {
         Biodegradeable: './biodegradeable.png',
-        Papier: './papier.png',
-        Plastik: './plastik.png',
-        Glas: './glas.png'
+        Paper: './paper.png',
+        Plastic: './plastic.png',
+        Glass: './glass.png'
     };
+
+   
 
     return (
         <div style={{ position: 'relative' }}>
@@ -105,10 +101,9 @@ const CategoryDropZone = ({
                         <p>See your streak on the stats page!</p>
                         <button
                             className='streak-card-butt'
-                            onClick={() => {
-                                setShowStreakCard(false);
-                                navigate('/stats');
-                            }}
+                            onClick={()=>{setShowStreakCard(false);
+        
+        navigate('/stats');}}
                         >
                             User Stats
                         </button>

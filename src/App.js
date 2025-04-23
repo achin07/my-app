@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { DndProvider } from 'react-dnd'; // Import DndProvider
@@ -31,4 +30,3 @@ export default App;
 
 
 //header footer
-//stats toolbar
